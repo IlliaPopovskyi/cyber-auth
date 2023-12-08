@@ -2,7 +2,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
-    tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
@@ -12,14 +11,26 @@ module.exports = {
   ],
   root: true,
   env: {
+    es6: true,
     node: true,
     jest: true,
   },
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off', // require explicit return types on functions and class methods
+    '@typescript-eslint/explicit-module-boundary-types': 'off', // require explicit return and argument types on exported functions' and classes' public class methods
+    '@typescript-eslint/no-explicit-any': 'off', // disallow the any type
+    'eol-last': ['warn', 'always'], //	require or disallow newline at the end of files
+    quotes: ['warn', 'single', { avoidEscape: true }], //enforce the consistent use of either backticks, double, or single quotes
+    semi: ['off', 'always'], // require or disallow semicolons instead of ASI
+    'arrow-spacing': 'warn', // enforce consistent spacing before and after the arrow in arrow functions
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };

@@ -2,20 +2,27 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
+    "moduleResolution": "node",
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
+    "baseUrl": "src",
     "skipLibCheck": true,
+    "allowJs": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
-    "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+    "rootDir": "./",
+    "paths": {
+      "modules/*": ["./modules/*"],
+      "models/*": ["./models/*"],
+      "common/*": ["./common/*"],
+      "providers/*": ["./providers/*"]
+    }
+  },
 }
