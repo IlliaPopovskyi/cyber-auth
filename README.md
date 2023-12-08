@@ -75,4 +75,4 @@ Nest is [MIT licensed](LICENSE).
 
 ## License
 
-SWAGGER on [Swagger url when the server is running locally on your system](localhost:3000/api/doc).
+SWAGGER on [Swagger url when the server is running locally on your system](http://localhost:3000/api/doc).
