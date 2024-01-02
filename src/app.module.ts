@@ -7,6 +7,7 @@ import { AbstractModule } from 'modules/abstract/abstract.module';
 import { ConfigModule } from '@nestjs/config';
 import { RedisModule } from './modules/redis/redis.module';
 import { getEnvPath } from 'common/helpers/env.helper';
+import { HealthyModule } from './modules/healthy/healthy.module';
 
 const envFilePath: string = getEnvPath(`${__dirname}/../..`);
 
@@ -32,12 +33,14 @@ const envFilePath: string = getEnvPath(`${__dirname}/../..`);
             path: '/auth',
             module: AuthModule,
           },
+          { path: '/healthy', module: HealthyModule },
         ],
       },
     ]),
     UserModule,
     AuthModule,
     RedisModule,
+    HealthyModule,
   ],
 })
 export class AppModule {}
